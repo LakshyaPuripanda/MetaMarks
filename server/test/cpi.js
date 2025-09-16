@@ -13,6 +13,6 @@ describe("CPICalculator", function () {
     await cpi.addMarks(0, 0, 80); 
     const result = await cpi.calculateCPI(0);
 
-    expect(result).to.equal(80);
+    expect(result).to.equal(1000);
   });
 });

@@ -11,18 +11,12 @@ export default function StudentDashboard() {
 
   const handleGetResult = async () => {
     const sIndex = Number(studentIndex);
-    console.log(sIndex);
     if (!isNaN(sIndex)) {
-      console.log('hi');
       try {
-        console.log('hey');
         const name = await getStudent(sIndex);
-        console.log(name)
         let cpi = 5.0;
         try {
-          console.log('hello');
           const result = await calculateCPI(sIndex);
-          console.log(result)
           if (result !== null && !isNaN(result)) {
             cpi = result;
           } else {
@@ -77,7 +71,7 @@ export default function StudentDashboard() {
       <div style={{ marginTop: 24 }}>
         <h4>My Result</h4>
         <p>Name: {studentName}</p>
-        <p>CPI: {studentCPI !== null ? studentCPI.toFixed(2) : "N/A"}</p>
+        <p>CPI: {studentCPI !== null ? studentCPI : "N/A"}</p>
         <p>Status: {classLabel}</p>
       </div>
 

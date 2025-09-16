@@ -49,15 +49,15 @@ contract CPICalculator {
     function calculateCPI(uint256 studentIndex) public view returns (uint256) {
 
         require(studentIndex < students.length, "Invalid student index");
-        return 100;
         uint256 sum = 0;
         uint256 count = students[studentIndex].marks.length;
-
         for (uint256 i = 0; i < count; i++) {
             sum += students[studentIndex].marks[i];
         }
-
+        console.log("count", count);
+        console.log("sum", sum);
         if (count == 0) return 0;
-        return sum / count;
+        uint256 result = (sum * 1e18) / (count * 10);
+        return result;
     }
 }

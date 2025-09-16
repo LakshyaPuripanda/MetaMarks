@@ -66,7 +66,7 @@ export async function initWallet() {
 
 export const CONTRACTS = {
   studentMarks: {
-    address: "0x4D5756dfb81de4cACacF1A6C1Cf027dc2534F5d0", // Ganache default deployment
+    address: "0x29cf1b68a3916972b05f17f5b17e2d81b4aea68e",
     abi: StudentMarks.abi,
   },
 };

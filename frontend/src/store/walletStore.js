@@ -206,8 +206,7 @@ export const useWalletStore = create((set, get) => ({
       const contract = new ethers.Contract(contractAddress, contractABI, provider);
       const cpi = await contract.calculateCPI(studentIndex);
       set({ error: null });
-      console.log("marks", Number(cpi))
-      return Number(cpi);
+      return ethers.formatUnits(cpi, 18);
     } catch (err) {
       set({ error: err.message });
       console.error("Error calculating CPI:", err);
